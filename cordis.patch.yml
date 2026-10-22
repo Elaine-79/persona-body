@@ -1,0 +1,19 @@
+- insert:
+    - id: persona-body
+      name: 'persona-body'
+      config:
+        # 白模：钉 / 锚 / 留白。可移植，换给谁都是白模。
+        corePath: './persona/core.md'
+        # 涂装：口吻、偏好、说话的样子。长出来的，写入必须人工确认。
+        coatingPath: './persona/coating.md'
+        # 待确认区与退役区（不进 prompt）
+        pendingPath: './persona/coating.pending.md'
+        retiredPath: './persona/coating.retired.md'
+        # 三层叠加：白模（骨架）+ 人格正文（身体）+ 涂装（长出来的）。
+        # 关掉只在一种情况下有意义：换个没身体的小模型，那时它需要骨架撑着。
+        injectCore: true
+        # system prompt 里的排序位：HARNESS_IDENTITY=-1000，DEPLOYMENT_PERSONA_PREFIX=0，
+        # 这里 1（紧跟人格前缀），下一个已知是 PLAN_POLICY=500。
+        order: 1
+        # 单份文件上限，防止误把大文件塞进来。
+        maxBytes: 12000

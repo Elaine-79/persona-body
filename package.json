@@ -1,0 +1,20 @@
+{
+  "name": "persona-body",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "把 AI 的人拆成三层：可移植的骨架（白模）、这一具身体（人格）、长出来的口吻（涂装）。",
+  "exports": {
+    ".": "./index.js"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml"
+  ],
+  "license": "MIT"
+}
